@@ -4,14 +4,6 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from django.shortcuts import render
-
-
-class SnippetPage(APIView):
-    
-    def get(self, request):
-         return render(request, 'MobileRecharge/index.html')
-     
 
 class StateList(APIView):
 
@@ -80,7 +72,7 @@ class HistoryDetail(APIView):
     def get_object(self, pk):
         try:
             return History.objects.get(pk=pk)
-        except Snippet.DoesNotExist:
+        except History.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
