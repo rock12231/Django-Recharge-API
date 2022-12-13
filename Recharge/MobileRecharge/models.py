@@ -10,16 +10,6 @@ all_state = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Delhi','Chhat
 ALL_ST = sorted([(item, item) for item in all_state])
 
 
-class Snippet(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=100, blank=True, default='')
-    code = models.TextField()
-    linenos = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ['created']
-
-
 class Oprators(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     oprator_name = models.CharField(max_length=100, blank=True, default='')
